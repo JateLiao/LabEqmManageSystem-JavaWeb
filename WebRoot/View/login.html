@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>管理员登录-四川师范大学设备管理系统</title>
+<link rel="stylesheet" type="text/css" href="../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../Resource/frameworks/easyui-1.4.4/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="../Resource/css/button.css" />
+<link rel="stylesheet" type="text/css" href="../Resource/frameworks/layer2.1/skin/layer.css"> 
+<link rel="stylesheet" type="text/css" href="../Resource/css/admin/login.css" />
+<script type="text/javascript" src="../Resource/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../Resource/frameworks/easyui-1.4.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../Resource/frameworks/easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../Resource/frameworks/layer2.1/layer.js"></script> 
+<script type="text/javascript" src="../Resource/js/Utils.js"></script>
+<script type="text/javascript" src="../Resource/js/admin/login.js"></script>
+</head>
+<body>
+	<div class="logo"></div>
+	<div class="title">
+		<h2 align="center"> 
+			实 验 室 设 备 管 理 系 统 - Laboratory Equipment Management System
+		</h2>
+	</div>
+	<div class="LoginWindow">
+		<table style=" width: 850px; height: 100%;margin: auto;">
+			<tr style="vertical-align: middle;">
+				<td style="width: 300px;">
+					<div class="backImgShow"></div>
+				</td>
+				<td style="width: 550px;">
+					<div class="login">
+						<table>
+							<tr  style="height: 50px;">
+								<td align="right">帐号：</td>
+								<td align="left" style="padding-left: 5px;" style="padding-left: 5px;">
+									<input type="text" id="admin" class="easyui-textbox" style="width: 150px; height:28px;"  />
+								</td>
+							</tr>
+							<tr style="height: 50px;">
+								<td align="right">密码：</td>
+								<td align="left" style="padding-left: 5px;" colspan="2">
+									<input type="password"  id="password" class="easyui-textbox" style="width: 150px; height:28px; " />
+						 			<a class="button button-action button-rounded" 
+						 				style="margin-left: 120px; font-size: 15px;" onclick="login();">Sign Up</a>
+								</td>
+							</tr>
+							<tr style="height: 50px;">
+								<td align="right">验证码：</td>
+								<td align="left" style="padding-left: 5px;" >
+									<input type="text"  id="validCode" class="easyui-textbox" style="width: 150px; height:28px; " />
+								</td>
+								<td>
+									<img  id="imgCode" onclick="changeValicode();" alt="看不清？换一张"
+									 style="width: 100px; height: 40px; vertical-align: bottom; cursor: pointer; margin-left: 10px;" >
+					                <a id="changeValicode" onclick="changeValicode();" title="看不清？换一张"
+			                	 		style="font-size: 14px; color:blue; margin-left: 10px;">看不清？换一张</a>
+								</td>
+							</tr>
+						</table>
+						
+						<p class="operation">
+							<a href="javascript:void(0)"  onclick="toFindPwd();">忘记密码？</a>
+						</p>
+						<p class="operation">
+							<a href="javascript:void(0)" onclick="toRegist();">管理员注册</a>
+						</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="foot" class="footer">
+		<span><font color="red">狮子山校区：</font>成都市锦江区静安路5号 (邮编:610068)</span>
+		<span style="margin-left: 10px;"><font color="red">成龙校区：</font>成都市龙泉驿区成龙大道二段1819号 (邮编:610101)</span>
+		<span style="margin-left: 10px;"><font color="red">东校区：</font>成都市外东洪河中路351号 (邮编:610101)</span><br /><br /> 
+		<span>© All Right Reserved . 四川师范大学 版权所有 (四川师范大学后勤部制作与维护)&nbsp;&nbsp;&nbsp;蜀ICP备05026983号</span><br /><br /> 
+		<span>开发团队：<a href="http://weibo.com/u/3174692593?is_hot=1" target="_blank">现象级吃货科技</a></span>
+		<span style="margin-left: 10px;">开发团队联系方式：现象级吃货科技</span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人信息</title>
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/icon.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../../Resource/css/admin/regist.css" /> -->
+<link rel="stylesheet" type="text/css" href="../../Resource/css/button.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/color.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/layer2.1/skin/layer.css">
+<script type="text/javascript" src="../../Resource/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/layer2.1/layer.js"></script> 
+<script type="text/javascript" src="../../Resource/js/Utils.js"></script>
+<script type="text/javascript" src="../../Resource/js/admin/info.js"></script>
+</head>
+<style type="text/css">
+body{
+	font-size: 13px;
+	width: 600px;
+	height: 300px;
+	margin: auto auto;  
+}
+.main{
+	width: 600px;
+	height: 300px;
+	margin: auto auto; 
+}
+.info_cell_top{
+	width: 180px;
+	height: 110px; 
+	line-height: 55px;
+	float: left;
+}
+.info_cell_top_right{
+	width: 230px;
+	height: 100px; 
+	line-height: 50px;
+	float: left;
+}
+.info_cell_mid{
+	width: 280px;
+	height: 100px; 
+	line-height: 50px;
+	float: left;
+}
+.info_cell_bottom{
+	width: 90%;
+	height: 100px; 
+	line-height: 80px;
+	float: left;
+}
+</style>
+<body>
+<div class="main">
+	<div  >
+		<div class="info_cell_top">
+			<span>工号：</span><font id="adminId"></font>
+			<br><span>姓名：</span><font id="adminName"></font>
+		</div>
+		<div class="info_cell_top">
+			<span>性别：</span><font id="adminSex"></font>
+			<br><span>生日：</span><font id="adminBirthday"></font>
+		</div>
+		<div class="info_cell_top_right">
+			<span>身份证号：</span><font id="adminIDCardNo"></font>
+			<br><span>籍贯：</span><font id="adminNativPlace"></font>
+		</div> 	
+	</div>
+	<div>
+		<div class="info_cell_mid">
+			<span>联系电话：</span><font id="adminTel"></font>
+			<br><span>邮箱：</span><font id="adminEmail"></font>
+		</div>
+		<div class="info_cell_mid">
+			<span>部门：</span><font id="adminDept"></font>
+			<br><span>学院：</span><font id="adminCollege"></font>
+		</div> 
+		<div  class="info_cell_bottom">
+			<span>家庭住址：</span><font id="adminAddress"></font>
+		</div> 
+	</div>
+</div>
+</body>
+</html>

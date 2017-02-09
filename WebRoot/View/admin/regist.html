@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>管理员注册</title>
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/css/admin/regist.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/css/button.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/color.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/layer2.1/skin/layer.css">
+<script type="text/javascript" src="../../Resource/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/layer2.1/layer.js"></script> 
+<script type="text/javascript" src="../../Resource/js/Utils.js"></script>
+<script type="text/javascript" src="../../Resource/js/admin/regist.js"></script>
+</head>
+<body>
+<div class="main">
+	<table>
+		<tr>
+			<td align="right">工号：</td>
+			<td>
+				<input id="adminId" class="easyui-textbox" style="width:150px; height:25px;">
+				<font style="margin-left: 5px; color: red;">*</font>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">姓名：</td>
+			<td><input id="adminName" class="easyui-textbox" style="width:150px; height:25px;">
+			<font style="margin-left: 5px; color: red;">*</font></td>
+		</tr>
+		<tr>
+			<td align="right">性别：</td>
+			<td>
+				<select id="adminSex" class="easyui-combobox" data-options="editable:false,panelHeight:'100px'" style="width: 80px; height: 25px;">
+					<option>-请选择-</option>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">生日：</td>
+			<td><input id="adminBirthday" class="easyui-datebox" data-options="editable:false"  style="width: 110px; height: 25px;"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">管理员角色：</td>
+			<td> 
+				<select id="adminLevel" class="easyui-combobox" data-options="editable:false,panelHeight:'100px'"  style="width: 130px; height:25px; ">
+					<option>-请选择-</option>
+					<option>实验室管理员</option>
+					<option>设备管理员</option>
+				</select>
+			<font style="margin-left: 25px; color: red;">*</font>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right" style="font-weight: bold;">密码：</td>
+			<td><input id="pwd" class="easyui-textbox" type="password" style="width:150px; height:25px;">
+			<font style="margin-left: 5px; color: red;">*</font></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right" style="font-weight: bold;">确认密码：</td>
+			<td><input id="pwdAgain" class="easyui-textbox" type="password" style="width:150px; height:25px;">
+			<font style="margin-left: 5px; color: red;">*</font></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">身份证号：</td>
+			<td><input id="adminIDCardNo" class="easyui-textbox" style="width:150px; height:25px;"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">住址：</td>
+			<td><input id="adminAddress" class="easyui-textbox" style="width:150px; height:25px;"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">籍贯：</td>
+			<td><input id="adminNativPlace" class="easyui-textbox" style="width:150px; height:25px;"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">部门：</td>
+			<td><input id="adminDept" class="easyui-textbox" style="width:150px; height:25px;"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">学院：</td>
+			<td>
+				<select id="adminCollege" class="easyui-combobox" editable="false" style="width: 150px; height:25px; ">
+					<option>-请选择-</option>
+					<option>经济与管理学院</option>
+					<option>计算机科学学院</option>
+					<option>体育学院</option>
+					<option>美术学院</option>
+					<option>舞蹈学院</option>
+					<option>服装与设计艺术学院</option>
+					<option>物理与电子工程学院</option>
+					<option>商学院</option>
+					<option>新闻与传媒学院</option>
+					<option>文学院</option>
+					<option>外国语学院</option>
+					<option>生命与科学学院</option>
+					<option>工学院</option>
+					<option>教育科学学院</option>
+					<option>数学与软件学院</option>
+					<option>生命与科学学院</option>
+					<option>影视与传媒学院</option>
+					<option>地理与资源学院</option>
+					<option>基础教育学院</option>
+					<option>职业技术学院</option>
+					<option>应用技术学院</option>
+					<option>国际教育学院</option>
+					<option>政治教育学院</option>
+					<option>教师教育学院</option>
+					<option>MBA教育中心</option>
+				</select>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right" style="font-weight: bold;"> 常用手机：</td>
+			<td><input id="adminTel" class="easyui-textbox" style="width:150px; height:25px;">
+			<font style="margin-left: 5px; color: red;">*</font></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right"  style="font-weight: bold;">常用邮箱：</td>
+			<td><input id="adminEmail" class="easyui-textbox" style="width:150px; height:25px;">
+			<font style="margin-left: 5px; color: red;">*</font></td>
+			<td></td>
+		</tr>
+	</table>
+	<div class="operation">
+		  <a href="javascript:void(0)" class="button button-glow button-rounded button-highlight" onclick="regist();"
+		  style="width: 100px; font-size: 14px; padding: 0 20px; margin-left: 30px; ">注册</a>
+ 		  <a href="javascript:void(0)" class="button button-glow button-rounded button-caution" onclick="cancelRegist();"
+ 		  style="width: 100px; font-size: 14px; padding: 0 20px; margin-left: 30px; ">取消</a>
+	</div>
+	
+	<div class="caution"><span>友情提示：</span>
+		<font>常用手机</font>&nbsp;以及&nbsp;
+		<font>常用邮箱</font>&nbsp;可能用于<br>
+		<font>&nbsp;密码找回&nbsp;</font>,请仔细填写。
+		
+	</div>
+</div>
+</body>
+</html>

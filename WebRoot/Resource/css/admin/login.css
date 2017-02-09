@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+
+body {
+	width: 95%;
+	height: 90%;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 95%;
+	height: 150px;
+	margin: auto auto; 
+	margin-top:10px;
+	background-image: url("../../../Resource/images/logo/logo_150.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.title{
+	width: 95%;
+	margin: auto auto;
+	height: 65px;
+	line-height: 65px;
+	font-size: 22px;
+}
+.title h2{
+	height: 60px;
+}
+
+a {
+	cursor: pointer;
+	color: #00a1d2;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+.LoginWindow {
+	width: 100%;
+	height: 320px;
+	margin: auto auto;
+	margin-top: 25px;
+	margin-bottom: 60px;
+	display:block;
+}
+
+.backImgShow{
+	width:310px;
+	height: 300px;
+	margin: auto auto;
+	background-image: url("../../../Resource/images/login_back4.jpg");
+	background-repeat:no-repeat;
+	background-position:center;  
+}
+.login {
+	width: 550px;
+	height: 220px;
+	margin: auto auto;
+	margin-left: 10px;
+	font-size: 15px;
+	padding-top: 80px;
+	position: relative; 
+	color: #000000;
+}
+.login p { 
+	margin-top: 25px;
+}
+.login table td{
+	vertical-align: middle;
+}
+
+.operation {
+	display: inline-block;
+	float: left;
+	padding-left: 40px;
+	font-size: 13px;
+	font-weight: 100;
+	letter-spacing: 1px;
+}
+
+.operation a:hover {
+	color: #fa200e;
+	text-decoration: none;
+} 
+
+.footer {
+	font-size: 13px;
+	color: black; 
+  	margin-bottom:10px;
+	width: 100%;
+	text-align: center;  
+}
+
+.footer a {
+	color: green;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: orange;
+}

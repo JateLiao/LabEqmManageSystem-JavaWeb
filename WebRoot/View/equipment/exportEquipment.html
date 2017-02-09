@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>批量导出设备</title>
+<link rel="stylesheet" type="text/css" href="../../Resource/css/button.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/css/equipment/importOrExport.css" />
+<script type="text/javascript" src="../../Resource/js/jquery-1.10.2.js"></script>
+</head>
+<body>
+	<div class="main">
+        <div class="box">
+            <input type="text" name="copyFile"  class="textbox" />
+            <a href="javascript:void(0);"  class="link" >导出位置</a>
+            <input type="file" class="uploadFile" style="width: 330px;" name="upload" onchange="getFile(this,'copyFile')" />
+        </div>
+        <div class="button_import">
+        	<div style="margin-top: 30px; width:150px; margin-right: 40px; float: right;">
+				<a href="javascript:void(0)" class="button button-glow button-rounded button-highlight"
+            	>开始导出</a>        	
+        	</div>
+        </div> 
+        <div class="helper">
+        	说明：目前只提供导出为微软Office Excel表格的功能，请知悉，因此给您带来的不便请谅解！
+        </div> 
+    </div>
+</body>
+</html>

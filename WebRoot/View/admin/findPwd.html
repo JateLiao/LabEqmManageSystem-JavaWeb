@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>找回密码</title>
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/color.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/css/admin/findPwd.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/css/button.css" />
+<script type="text/javascript" src="../../Resource/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../Resource/js/Utils.js"></script>
+<script type="text/javascript" src="../../Resource/js/admin/findPwd.js"></script>
+</head>
+<body>
+<div class="main">
+	<table>
+		<tr>
+			<td align="right">找回账号：</td>
+			<td align="left"><input id="adminId" class="easyui-textbox" style="height:28px; width: 200px;"></td>
+		</tr>
+		<tr>
+			<td align="right">联系手机：</td>
+			<td align="left"><input id="adminTel" class="easyui-textbox" style="height:28px; width: 200px;"></td>
+		</tr>
+		<tr>
+			<td align="right">联系邮箱：</td>
+			<td align="left"><input id="adminEmail" class="easyui-textbox" style="height:28px; width: 200px;"></td>
+		</tr>
+	</table>
+	<div class="operation" >
+		 <a href="javascript:void(0)" class="button button-glow button-rounded button-caution" onclick="findPwd();">立即找回</a>
+	</div>
+</div>
+</body>
+</html>

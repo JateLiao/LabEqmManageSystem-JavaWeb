@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+/* 
+body{ 
+	margin: auto auto; 
+	width: 100%; 
+} */
+
+.admin_list_main{
+	font-size: 13px; 
+	margin: auto auto; 
+	width: 950px;  
+	height: 450px;
+	float: center; 
+} 
+.admin_list_center{
+	margin: auto auto;	
+	display: block;
+	width: 100%;
+	height: 450px; 
+}    
+.admin_list_search_div{
+	color: black;
+	font-size: 14px; 
+	margin: auto auto; 
+	height: 30px;
+	width: 90%; 
+	margin-bottom: 10px; 
+} 
+.admin_list_search_div a:HOVER{ 
+	color: #ff6c26;
+}
+.admin_list_adminList{
+	font-size: 14px;
+}  

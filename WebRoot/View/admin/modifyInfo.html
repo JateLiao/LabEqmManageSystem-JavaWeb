@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>修改信息</title>
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/icon.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../../Resource/css/admin/regist.css" /> -->
+<link rel="stylesheet" type="text/css" href="../../Resource/css/button.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/easyui-1.4.4/themes/color.css" />
+<link rel="stylesheet" type="text/css" href="../../Resource/frameworks/layer2.1/skin/layer.css">
+<script type="text/javascript" src="../../Resource/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../Resource/frameworks/layer2.1/layer.js"></script> 
+<script type="text/javascript" src="../../Resource/js/Utils.js"></script>
+<script type="text/javascript" src="../../Resource/js/admin/info.js"></script>
+</head>
+<style type="text/css">
+body{
+	font-size: 13px;
+	width: 600px;
+	height: 285px;
+	margin: auto auto;  
+	margin-top: 15px;
+}
+.main{
+	width: 600px;
+	height: 230px;
+	margin: auto auto; 
+}
+.main input {
+	padding-bottom: 4px ! important;
+	padding-top: 4px ! important; 
+}
+</style>
+<body>
+<div class="main">
+	<table>
+		<tr>
+			<td align="right">工号：</td>
+			<td style="width: 255px;"><font id="adminId" style="color: red; font-size: 17px; font-weight: bold;" ></font></td>
+			<td align="right">生日：</td>
+			<td><input id="adminBirthday" class="easyui-datebox" editable="false" style="width: 100px; height: 25px;"></td>
+		</tr>
+		<tr style="height: 35px;">
+			<td align="right">姓名：</td>
+			<td>
+				<input id="adminName" class="easyui-textbox" style="height:25px;width: 145px;padding-top: 4px;padding-bottom: 4px;">
+				<font style="margin-left: 5px; color: red;">*</font>
+			</td>
+			<td align="right">部门：</td>
+			<td><input id="adminDept" class="easyui-textbox" style="height:25px;width: 155px;"></td>
+		</tr>
+		<tr style="height: 35px;">
+			<td align="right">学院：</td>
+			<td><select id="adminCollege" data-options="editable:false,panelHeight:'160px'" class="easyui-combobox" style="width: 145px; height: 25px;">
+					<option>-请选择-</option> <option>经济与管理学院</option>
+					<option>计算机科学学院</option> <option>体育学院</option>
+					<option>美术学院</option> <option>舞蹈学院</option>
+					<option>服装与设计艺术学院</option> <option>物理与电子工程学院</option>
+					<option>商学院</option> <option>新闻与传媒学院</option>
+					<option>文学院</option> <option>外国语学院</option>
+					<option>生命与科学学院</option> <option>工学院</option>
+					<option>教育科学学院</option> <option>数学与软件学院</option>
+					<option>生命与科学学院</option> <option>影视与传媒学院</option>
+					<option>地理与资源学院</option> 	<option>基础教育学院</option>
+					<option>职业技术学院</option> <option>应用技术学院</option>
+					<option>国际教育学院</option> <option>政治教育学院</option>
+					<option>教师教育学院</option> <option>MBA教育中心</option>
+			</select></td>
+			<td align="right">身份证号：</td>
+			<td><input id="adminIDCardNo"  class="easyui-textbox" style="height:25px;width: 155px;"></td>
+		</tr>
+		<tr style="height: 35px;">
+			<td align="right">性别：</td>
+			<td>
+			<select id="adminSex" class="easyui-combobox" data-options="editable:false,panelHeight:'75px'"
+				 style="width: 80px; height: 25px;">
+					<option>-请选择-</option>
+					<option>男</option>
+					<option>女</option>
+			</select>
+			</td>
+			<td align="right">联系电话：</td>
+			<td>
+				<input id="adminTel"  class="easyui-textbox" style="height:25px;width: 155px;">
+				<font style="margin-left: 5px; color: red;">*</font>
+			</td>
+		</tr>
+		<tr style="height: 35px;">
+			<td align="right">籍贯：</td>
+			<td><input id="adminNativePlace" class="easyui-textbox"  style="height:25px;width: 145px;"></td>
+			<td align="right">邮箱：</td>
+			<td>
+				<input id="adminEmail"  class="easyui-textbox" style="height:25px;width: 155px;">
+				<font style="margin-left: 5px; color: red;">*</font>
+			</td>
+		</tr>
+		<tr style="height: 35px;"  >
+			<td align="right">家庭住址：</td>
+			<td colspan="3"><input id="adminAddress"  class="easyui-textbox" style="height:25px; width: 300px;"></td>
+		</tr>
+	</table>
+	 
+</div>
+<div style="width: 500px; text-align: right;">
+	<a href="javascript:void(0)" class="button button-glow button-rounded button-caution" onclick="modifyInfo();"
+	  style="width: 100px; font-size: 14px; padding: 0 20px;">确认修改</a>
+</div>
+</body>
+</html>

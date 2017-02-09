@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scrapRecord">
+
+<!-- 分页查询 -->
+    <select id="select_page_map" parameterType="java.util.Map"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.EqmScrapRecordVo">
+        SELECT * FROM EqmScrapRecord 
+        WHERE keyID>=(select keyID from EqmScrapRecord 
+        WHERE 1=1
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="adminId != null ">
+            AND adminId = #{adminId}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="applyId != null ">
+            AND applyId = #{applyId}
+        </if>
+        <if test="applyName != null ">
+            AND applyName = #{applyName}
+        </if>
+        <if test="applyLevel != null ">
+            AND applyLevel = #{applyLevel}
+        </if>
+        <if test="applyDate != null ">
+            AND applyDate = #{applyDate}
+        </if>
+        <if test="scrapReason != null ">
+            AND scrapReason = #{scrapReason}
+        </if>
+        <if test="handleStatus != null ">
+            AND handleStatus = #{handleStatus}
+        </if>
+        <if test="handleStatusName != null ">
+            AND handleStatusName = #{handleStatusName}
+        </if> 
+        <if test="handleDate != null ">
+            AND handleDate = #{handleDate}
+        </if> 
+        <if test="handleReason != null ">
+            AND handleReason = #{handleReason}
+        </if> 
+        ORDER BY KeyID ASC
+        limit #{pageCurrent},1 )        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="adminId != null ">
+            AND adminId = #{adminId}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="applyId != null ">
+            AND applyId = #{applyId}
+        </if>
+        <if test="applyName != null ">
+            AND applyName = #{applyName}
+        </if>
+        <if test="applyLevel != null ">
+            AND applyLevel = #{applyLevel}
+        </if>
+        <if test="applyDate != null ">
+            AND applyDate = #{applyDate}
+        </if>
+        <if test="scrapReason != null ">
+            AND scrapReason = #{scrapReason}
+        </if>
+        <if test="handleStatus != null ">
+            AND handleStatus = #{handleStatus}
+        </if>
+        <if test="handleStatusName != null ">
+            AND handleStatusName = #{handleStatusName}
+        </if> 
+        <if test="handleDate != null ">
+            AND handleDate = #{handleDate}
+        </if> 
+        <if test="handleReason != null ">
+            AND handleReason = #{handleReason}
+        </if> 
+        limit #{pageSize}
+    </select>
+    
+    
+    <insert id="insert" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EqmScrapRecordVo">
+        INSERT INTO
+        EqmScrapRecord
+        (
+			EqmName,
+			PropertyNo,
+			AdminId,
+			AdminName,
+			ApplyId,
+			ApplyName,
+			ApplyLevel,
+			ApplyDate,
+			ScrapReason,
+			HandleStatus,
+			HandleStatusName,
+			HandleDate,
+			HandleReason
+        )
+        Values(
+	        #{eqmName},
+			#{propertyNo},
+			#{adminId},
+			#{adminName},
+			#{applyId},
+			#{applyName},
+			#{applyLevel},
+			now(),
+			#{scrapReason},
+			#{handleStatus},
+			#{handleStatusName},
+			#{handleDate},
+			#{handleReason}
+        )
+    </insert>
+    
+    <!-- 查询总量 -->
+    <select id="query_count" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(*) from EqmScrapRecord WHERE 1=1 
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="adminId != null ">
+            AND adminId = #{adminId}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="applyId != null ">
+            AND applyId = #{applyId}
+        </if>
+        <if test="applyName != null ">
+            AND applyName = #{applyName}
+        </if>
+        <if test="applyLevel != null ">
+            AND applyLevel = #{applyLevel}
+        </if>
+        <if test="applyDate != null ">
+            AND applyDate = #{applyDate}
+        </if>
+        <if test="scrapReason != null ">
+            AND scrapReason = #{scrapReason}
+        </if>
+        <if test="handleStatus != null ">
+            AND handleStatus = #{handleStatus}
+        </if>
+        <if test="handleStatusName != null ">
+            AND handleStatusName = #{handleStatusName}
+        </if> 
+        <if test="handleDate != null ">
+            AND handleDate = #{handleDate}
+        </if> 
+        <if test="handleReason != null ">
+            AND handleReason = #{handleReason}
+        </if> 
+    </select> 
+    
+    <!-- 批量更新 -->
+    <update id="update_status_id" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EqmScrapRecordVo">
+         update EqmScrapRecord   
+         <set>  
+			handleReason = #{handleReason},
+         	handleStatus=#{handleStatus},
+         	HandleStatusName=#{handleStatusName},
+         	HandleDate=now()
+         </set>
+         where keyID = #{keyID}  
+    </update>
+</mapper>

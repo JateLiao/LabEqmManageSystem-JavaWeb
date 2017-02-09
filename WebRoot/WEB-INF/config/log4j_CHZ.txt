@@ -1,0 +1,56 @@
+
+
+####本文本为log4j.properties的UTF-8编码下的中文参考文档
+
+
+### 设置###
+log4j.rootLogger = debug,stdout,D,E
+
+### 输出信息到控制台 ###
+log4j.appender.stdout = org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target = System.out
+log4j.appender.stdout.layout = org.apache.log4j.PatternLayout
+##log4j.appender.stdout.layout.ConversionPattern = [%-5p] %d{yyyy-MM-dd HH:mm:ss,SSS} method:%l%n%m%n
+
+### 输出DEBUG 级别的日志到D://Logs/LabEquipmentManageSystem/log ###
+log4j.appender.appenderName = fully.qualified.name.of.appender.class
+#日志文件存储路径
+log4j.appender.D.File = D://Logs/LabEquipmentManageSystem/debug/debug.log
+#每天生成一个日志文件
+log4j.appender.D = org.apache.log4j.DailyRollingFileAppender 
+#日期拼接 
+log4j.appender.D.MaxFileSize=100KB
+log4j.appender.D.DatePattern='_'yyyy-MM-dd'.log'
+log4j.appender.D.encoding=UTF-8 
+log4j.appender.D.Append = true
+log4j.appender.D.Threshold = DEBUG 
+log4j.appender.D.layout = org.apache.log4j.PatternLayout
+log4j.appender.D.layout.ConversionPattern = [Begin]%n  日志等级：%p%n  记录时间：%d{yyyy-MM-dd HH:mm:ss}%n  用户消息：%m%n  日志详情：%l%n[End]%n%n
+
+### 输出Error 级别的日志到D://Logs/LabEquipmentManageSystem/log ###
+log4j.appender.appenderName = fully.qualified.name.of.appender.class
+#日志文件存储路径
+log4j.appender.E.File = D://Logs/LabEquipmentManageSystem/error/error.log
+#每天生成一个日志文件
+log4j.appender.E = org.apache.log4j.DailyRollingFileAppender 
+#日期拼接 
+log4j.appender.E.DatePattern='_'yyyy-MM-dd'.log'
+log4j.appender.E.MaxFileSize=100KB
+log4j.appender.E.encoding=UTF-8 
+log4j.appender.E.Append = true
+log4j.appender.E.Threshold = DEBUG 
+log4j.appender.E.layout = org.apache.log4j.PatternLayout
+log4j.appender.E.layout.ConversionPattern = [Begin]%n  异常等级：%p%n  报错时间：%d{yyyy-MM-dd HH:mm:ss}%n  用户消息：%m%n  报错代码位置：%F: %L(Line) %n  报错代码位置：%c%n[End]%n%n
+
+
+###显示SQL语句部分 正式环境注释以下部分
+log4j.logger.com.ibatis=DEBUG 
+log4j.logger.com.ibatis.common.jdbc.SimpleDataSource=DEBUG 
+log4j.logger.com.ibatis.common.jdbc.ScriptRunner=DEBUG 
+log4j.logger.com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate=DEBUG 
+log4j.logger.java.sql.Connection=DEBUG 
+log4j.logger.java.sql.Statement=DEBUG 
+log4j.logger.java.sql.PreparedStatement=DEBUG
+
+
+

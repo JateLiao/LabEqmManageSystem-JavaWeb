@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+* {
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+
+body {
+	font-family: 'MicroSoft Yahei', verdana, arial, tahoma;
+	font-size: 12px;
+	color: #333;
+	-webkit-text-size-adjust: none;
+}
+
+ul, ol, li {
+	list-style: none
+}
+
+a {
+	text-decoration: none;
+	word-wrap: break-word;
+	outline: none;
+	hide-focus: expression(this.hideFocus = true);
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* lanmu-content */
+.lanmu-content {
+	width: 220px;
+	margin: 14px auto 0 auto;
+	float: left;
+}
+
+/* .lanmu-content .listmore {
+	width: 100%;
+	display: block;
+	text-align: center;
+	height: 25px;
+	margin-top: 5px;
+	border-top: 0;
+	background: #eee;
+	color: #1594d1;
+	font: normal 12px/25px Tahoma, Verdana;
+} */
+
+.lanmu-list {
+	display: block;
+}
+
+.lanmu-list dt {
+	display: block;
+	width: 228px;
+	height: 40px;
+	background: #348938;
+	font: bold 14px/40px "宋体";
+	color: #fff;
+	padding-left: 10px;
+}
+
+.lanmu-list dd {
+	padding-top: 2px;
+}
+
+.lanmu-list dd a {
+	display: block;
+	height: 40px;
+	background: #f9f9f9;
+	border-bottom: 1px solid #eee;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #999;
+	border-right: 1px solid #eee;
+	font: normal 12px/33px Georgia "宋体";
+	font-weight: bold;
+	color: #adadad;
+	padding-left: 15px;
+	line-height: 40px;
+}
+
+.lanmu-list dd a:hover {
+	padding-left: 28px;
+}
+
+.lanmu-list dd a:hover, .lanmu-list dd a.current {
+	border-left: 2px solid #348938;
+	background-color: #939393; 
+	color: red;
+	font-weight: bold;
+}
+
+.ttttest{
+	color: #0000f2;
+}

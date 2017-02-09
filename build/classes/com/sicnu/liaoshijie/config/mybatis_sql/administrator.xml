@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+    <select id="select" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        SELECT * FROM Administrator WHERE 1=1
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="adminID != null ">
+            AND adminID = #{adminID}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="adminBirthday != null ">
+            AND adminBirthday = #{adminBirthday}
+        </if>
+        <if test="adminTel != null ">
+            AND adminTel = #{adminTel}
+        </if>
+        <if test="adminEmail != null ">
+            AND adminEmail = #{adminEmail}
+        </if>
+        <if test="adminSex != null ">
+            AND adminSex = #{adminSex}
+        </if>
+        <if test="adminDept != null ">
+            AND adminDept = #{adminDept}
+        </if>
+        <if test="passWord != null ">
+            AND passWord = #{passWord}
+        </if>
+        <if test="adminCollege != null ">
+            AND adminCollege = #{adminCollege}
+        </if>
+        <if test="adminLevel != null ">
+            AND EqmBrand = #{adminLevel}
+        </if>
+        <if test="adminIDCardNo != null ">
+            AND AdminIDCardNo = #{adminIDCardNo}
+        </if>
+    </select>
+
+    <select id="select_name" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        SELECT
+        *
+        FROM Administrator
+        WHERE adminName=#{adminName}
+    </select>
+    <select id="select_adminID" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        SELECT
+        *
+        FROM Administrator
+        WHERE adminID = #{adminID}
+    </select>
+
+    <update id="update" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        UPDATE Administrator 
+        <set> 
+            <if test="adminName != null ">
+                adminName = #{adminName},
+            </if>
+            <if test="description != null ">
+                description = #{description},
+            </if>
+            <if test="adminBirthday != null ">
+                adminBirthday = #{adminBirthday},
+            </if>
+            <if test="adminTel != null ">
+                adminTel = #{adminTel},
+            </if>
+            <if test="adminEmail != null ">
+                adminEmail = #{adminEmail},
+            </if>
+            <if test="adminSex != null ">
+                adminSex = #{adminSex},
+            </if>
+            <if test="adminDept != null ">
+                adminDept = #{adminDept},
+            </if>
+            <if test="passWord != null ">
+                passWord = #{passWord},
+            </if>
+            <if test="adminCollege != null ">
+                adminCollege = #{adminCollege},
+            </if>
+            <if test="adminLevel != null ">
+                adminLevel = #{adminLevel},
+            </if>
+	        <if test="adminIDCardNo != null ">
+	            AdminIDCardNo = #{adminIDCardNo},
+	        </if>
+	        <if test="adminNativePlace != null ">
+	            adminNativePlace = #{adminNativePlace},
+	        </if>
+	        <if test="adminAddress != null ">
+	            adminAddress = #{adminAddress},
+	        </if>
+	        <if test="tmp1 != null ">
+	            tmp1 = #{tmp1},
+	        </if>
+            ModifyTime=now() 
+            WHERE adminID = #{adminID}
+        </set>
+    </update>
+
+    <!-- 删除管理员 -->
+    <delete id="delete_id" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        DELETE FROM Administrator WHERE adminID = #{adminID}
+    </delete>
+    <delete id="delete_name" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        DELETE FROM Administrator WHERE adminName = #{adminName}
+    </delete>
+
+    <insert id="insert" parameterType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        INSERT INTO
+        Administrator
+        (
+        adminID,
+        adminLevel,
+        passWord,
+        adminName,
+        adminTel,
+        adminBirthday,
+        adminEmail,
+        adminCollege,
+        adminSex,
+        adminIDCardNo,
+        adminDept,
+        tmp1,
+        description,
+        ModifyTime
+        )
+        Values(
+        #{adminID},
+        #{adminLevel},
+        #{passWord},
+        #{adminName},
+        #{adminTel},
+        #{adminBirthday},
+        #{adminEmail},
+        #{adminCollege},
+        #{adminSex},
+        #{adminIDCardNo},
+        #{adminDept},
+        #{tmp1},
+        #{description},
+        now()
+        )
+    </insert>
+    
+    <!-- 查询总量 -->
+    <select id="count_map" parameterType="java.util.Map"
+        resultType="java.lang.Integer">
+        select count(*) from Administrator WHERE 1=1 AND AdminLevel IN('2','3','99') 
+        AND tmp1 = #{tmp1} 
+        <if test="adminID != null ">
+            AND adminID = #{adminID}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+    </select> 
+    
+     <!-- 分页查询 -->
+    <select id="select_page_map" parameterType="java.util.Map"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.AdministratorVo">
+        SELECT * FROM Administrator
+        WHERE 1=1 AND tmp1 = #{tmp1} AND AdminLevel IN('2','3','99') AND keyID>=(select keyID from Administrator 
+        WHERE 1=1 AND tmp1 = #{tmp1} AND AdminLevel IN('2','3','99') 
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="adminID != null ">
+            AND adminID = #{adminID}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if> 
+        ORDER BY KeyID ASC 
+        limit #{pageCurrent},1 )        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="adminID != null ">
+            AND adminID = #{adminID}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if> 
+        limit #{pageSize} 
+    </select> 
+    
+    <!-- 批量删除管理员 -->
+    <delete id="delete_batch" parameterType="java.util.List">
+    DELETE FROM Administrator WHERE AdminID  IN 
+    <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+        #{item.adminID}
+    </foreach>
+    </delete>
+</mapper>

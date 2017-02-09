@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+ /*
+  * 批量导入导出设备
+  */
+
+body {
+	width: 380px;
+	height: 220px;
+	margin: auto auto;
+	font: 14px Verdana, Arial, Geneva, sans-serif;
+	color: #404040;
+	background: #f9f9f9;
+	 font-family: "Microsoft YaHei",微软雅黑;
+} 
+
+img {
+	border-style: none;
+}
+
+.main {
+	width: 380px;
+	height: 210px;
+	margin: auto auto;
+	margin-top: 15px; 
+}
+
+.box {
+	width: 380px;
+	position: relative;
+	display: block;
+} 
+
+input.uploadFile {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	cursor: pointer;
+	width: 330px;
+	height: 36px;
+	overflow: hidden;
+}
+
+input.textbox {
+	float: left;
+	padding: 5px;
+	color: #1c5410;
+	height: 24px;
+	line-height: 24px;
+	border: 1px #ccc solid;
+	width: 250px;
+	margin-right: 4px;
+	font-size: 15px; 
+	
+	padding-left:10px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+a.link {
+	float: left;
+	display: inline-block;
+	padding: 4px 16px;
+	color: #fff;
+	font: 14px "Microsoft YaHei", Verdana, Geneva, sans-serif;
+	cursor: pointer;
+	background-color: #0099ff;
+	line-height: 28px;
+	text-decoration: none;
+}
+
+.button_import {
+	width: 95%;
+	height: 70px;
+	padding-top: 30px;
+	margin: auto auto;
+} 
+
+.helper{
+	width: 100%;
+	margin: auto auto;
+	height: auto;
+	margin-top: 35px;
+} 

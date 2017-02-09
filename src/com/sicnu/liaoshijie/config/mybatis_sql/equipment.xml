@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="eqm">
+<!-- eqmLab -->
+    <!-- 普通查询 -->
+    <select id="select" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        SELECT * FROM Equipment WHERE 1=1
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="eqmPrice != null ">
+            AND eqmPrice = #{eqmPrice}
+        </if>
+        <if test="description != null ">
+            AND description = #{description}
+        </if>
+        <if test="eqmLab != null ">
+            AND eqmLab = #{eqmLab}
+        </if>
+        <if test="eqmFactory != null ">
+            AND eqmFactory = #{eqmFactory}
+        </if>
+        <if test="eqmClass != null ">
+            AND eqmClass = #{eqmClass}
+        </if>
+        <if test="buyStaff != null ">
+            AND buyStaff = #{buyStaff}
+        </if>
+        <if test="college != null ">
+            AND college = #{college}
+        </if>
+        <if test="manager != null ">
+            AND manager = #{manager}
+        </if>
+        <if test="eqmType != null ">
+            AND eqmType = #{eqmType}
+        </if>
+        <if test="buyTime != null ">
+            AND buyTime = #{buyTime}
+        </if> 
+        <if test="managerId != null ">
+            AND managerId = #{managerId}
+        </if>
+        <if test="eqmStatus != null ">
+            AND eqmStatus = #{eqmStatus}
+        </if> 
+    </select>
+
+    <!-- 分页查询 -->
+    <select id="select_page_map" parameterType="java.util.Map"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        SELECT * FROM Equipment
+        WHERE keyID>=(select keyID from Equipment
+        WHERE 1=1
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="eqmPrice != null ">
+            AND eqmPrice = #{eqmPrice}
+        </if>
+        <if test="description != null ">
+            AND description = #{description}
+        </if>
+        <if test="eqmFactory != null ">
+            AND eqmFactory = #{eqmFactory}
+        </if> 
+        <if test="eqmClass != null ">
+            AND eqmClass = #{eqmClass}
+        </if>
+        <if test="buyStaff != null ">
+            AND buyStaff = #{buyStaff}
+        </if>
+        <if test="college != null ">
+            AND college = #{college}
+        </if>
+        <if test="manager != null ">
+            AND manager = #{manager}
+        </if>
+        <if test="eqmType != null ">
+            AND eqmType = #{eqmType}
+        </if>
+        <if test="buyTime != null ">
+            AND buyTime = #{buyTime}
+        </if> 
+        <!-- &lt; 小于符号在xml里的转义 -->
+        <if test="endDate != null">
+            AND buyTime &lt;= #{endDate}
+        </if>
+        <!--  &gt; 大于符号在xml里的转义 -->
+        <if test="startDate != null">
+            AND buyTime  &gt;= #{startDate}
+        </if>
+        <if test="managerId != null ">
+            AND managerId = #{managerId}
+        </if>
+        <if test="eqmStatus != null ">
+            AND eqmStatus = #{eqmStatus}
+        </if> 
+        ORDER BY KeyID ASC
+        limit #{pageCurrent},1 )        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="eqmPrice != null ">
+            AND eqmPrice = #{eqmPrice}
+        </if>
+        <if test="description != null ">
+            AND description = #{description}
+        </if>
+        <if test="eqmFactory != null ">
+            AND eqmFactory = #{eqmFactory}
+        </if>
+        <if test="eqmClass != null ">
+            AND eqmClass = #{eqmClass}
+        </if>
+        <if test="buyStaff != null ">
+            AND buyStaff = #{buyStaff}
+        </if>
+        <if test="college != null ">
+            AND college = #{college}
+        </if>
+        <if test="eqmLab != null ">
+            AND eqmLab = #{eqmLab}
+        </if>
+        <if test="manager != null ">
+            AND manager = #{manager}
+        </if>
+        <if test="eqmType != null ">
+            AND eqmType = #{eqmType}
+        </if>
+        <if test="buyTime != null ">
+            AND buyTime = #{buyTime}
+        </if> 
+        <!-- &lt; 小于符号在xml里的转义 -->
+        <if test="endDate != null">
+            AND buyTime &lt;= #{endDate}
+        </if>
+        <!--  &gt; 大于符号在xml里的转义 -->
+        <if test="startDate != null">
+            AND buyTime  &gt;= #{startDate}
+        </if>
+        <if test="managerId != null ">
+            AND managerId = #{managerId}
+        </if>
+        <if test="eqmStatus != null ">
+            AND eqmStatus = #{eqmStatus}
+        </if> 
+        limit #{pageSize}
+    </select>
+
+    <!-- 根据id查询设备 -->
+    <select id="select_id" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        SELECT * FROM Equipment
+        WHERE keyID = #{keyID}
+    </select>
+
+    <!-- 查询总量 -->
+    <select id="count_map" parameterType="java.util.Map"
+        resultType="java.lang.Integer">
+        select count(*) from Equipment WHERE 1=1 
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="eqmPrice != null ">
+            AND eqmPrice = #{eqmPrice}
+        </if>
+        <if test="description != null ">
+            AND description = #{description}
+        </if>
+        <if test="eqmFactory != null ">
+            AND eqmFactory = #{eqmFactory}
+        </if>
+        <if test="eqmClass != null ">
+            AND eqmClass = #{eqmClass}
+        </if>
+        <if test="buyStaff != null ">
+            AND buyStaff = #{buyStaff}
+        </if>
+        <if test="college != null ">
+            AND college = #{college}
+        </if>
+        <if test="manager != null ">
+            AND manager = #{manager}
+        </if>
+        <if test="eqmLab != null ">
+            AND eqmLab = #{eqmLab}
+        </if>
+        <if test="eqmType != null ">
+            AND eqmType = #{eqmType}
+        </if>
+        <if test="buyTime != null ">
+            AND buyTime = #{buyTime}
+        </if> 
+        <!-- &lt; 小于符号在xml里的转义 -->
+        <if test="endDate != null">
+            AND buyTime &lt;= #{endDate}
+        </if>
+        <!--  &gt; 大于符号在xml里的转义 -->
+        <if test="startDate != null">
+            AND buyTime  &gt;= #{startDate}
+        </if>
+        <if test="managerId != null ">
+            AND managerId = #{managerId}
+        </if>
+        <if test="eqmStatus != null ">
+            AND eqmStatus = #{eqmStatus}
+        </if> 
+    </select>
+
+    <!-- 更新设备 -->
+    <update id="update" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        UPDATE Equipment
+        <set>
+            <if test="eqmName != null ">
+                eqmName = #{eqmName},
+            </if>
+            <if test="eqmPrice != null ">
+                eqmPrice = #{eqmPrice},
+            </if>
+            <if test="description != null ">
+                description = #{description},
+            </if>
+            <if test="propertyNo != null ">
+                propertyNo = #{propertyNo},
+            </if>
+            <if test="eqmLab != null ">
+                eqmLab = #{eqmLab},
+            </if>
+            <if test="eqmFactory != null ">
+                eqmFactory = #{eqmFactory},
+            </if>
+            <if test="eqmClass != null ">
+                eqmClass = #{eqmClass},
+            </if>
+            <if test="buyStaff != null ">
+                buyStaff = #{buyStaff},
+            </if>
+            <if test="college != null ">
+                college = #{college},
+            </if>
+            <if test="manager != null ">
+                manager = #{manager},
+            </if>
+            <if test="eqmType != null ">
+                eqmType = #{eqmType}, 
+            </if> 
+            <if test="buyTime != null ">
+                buyTime = #{buyTime}, 
+            </if> 
+            <if test="managerId != null ">
+                managerId = #{managerId}, 
+            </if>
+            <if test="eqmStatus != null ">
+                eqmStatus = #{eqmStatus}, 
+            </if>
+            ModifyTime=now()
+            WHERE keyID = #{keyID}
+        </set>
+    </update>
+    
+    <update id="update_status_propertyNo" parameterType="java.util.List">
+    	 <foreach collection="list" item="item" index="index" open="" close="" separator=";">  
+                update Equipment   
+                <set>  
+                  	eqmStatus = #{item.eqmStatus},
+	                ModifyTime=now()
+	                where propertyNo = #{item.propertyNo}
+                </set>  
+         </foreach>  
+    </update>
+    
+    <!-- 删除设备 -->
+    <delete id="delete" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        DELETE FROM Equipment WHERE keyID = #{keyID}
+    </delete>
+    <!-- 按设备名删除设备 -->
+    <delete id="delete_name" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        DELETE FROM Equipment WHERE EqmName = #{eqmName}
+    </delete>
+    <!-- 批量删除设备 -->
+    <delete id="delete_batch" parameterType="java.util.List">
+    DELETE FROM Equipment WHERE keyID IN 
+    <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+        #{item.keyID}
+    </foreach>
+    </delete>
+
+    <!-- 添加设备 -->
+    <insert id="insert" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo">
+        INSERT INTO
+        Equipment
+        (
+        <if test="eqmName != null ">
+            eqmName,
+        </if>
+        <if test="propertyNo != null ">
+            propertyNo,
+        </if>
+        <if test="eqmPrice != null ">
+            eqmPrice,
+        </if>
+        <if test="description != null ">
+            description,
+        </if>
+        <if test="eqmLab != null ">
+            eqmLab,
+        </if>
+        <if test="eqmFactory != null ">
+            eqmFactory,
+        </if>
+        <if test="eqmClass != null ">
+            eqmClass,
+        </if>
+        <if test="buyStaff != null ">
+            buyStaff,
+        </if>
+        <if test="college != null ">
+            college,
+        </if>
+        <if test="manager != null ">
+            manager,
+        </if>
+        <if test="eqmType != null ">
+            eqmType,
+        </if>
+        <if test="buyTime != null ">
+            buyTime,
+        </if> 
+        <if test="managerId != null ">
+            managerId,
+        </if>
+        <if test="eqmStatus != null ">
+            eqmStatus,
+        </if> 
+        ModifyTime
+        )
+        Values(
+        <if test="eqmName != null ">
+            #{eqmName},
+        </if>
+        <if test="propertyNo != null ">
+            #{propertyNo},
+        </if>
+        <if test="eqmPrice != null ">
+            #{eqmPrice},
+        </if>
+        <if test="description != null ">
+            #{description},
+        </if>
+        <if test="eqmLab != null ">
+            #{eqmLab},
+        </if>
+        <if test="eqmFactory != null ">
+            #{eqmFactory},
+        </if>
+        <if test="eqmClass != null ">
+            #{eqmClass},
+        </if>
+        <if test="buyStaff != null ">
+            #{buyStaff},
+        </if>
+        <if test="college != null ">
+            #{college},
+        </if>
+        <if test="manager != null ">
+            #{manager},
+        </if>
+        <if test="eqmType != null ">
+            #{eqmType},
+        </if>
+        <if test="buyTime != null ">
+            #{buyTime},
+        </if> 
+        <if test="managerId != null ">
+            #{managerId},
+        </if>
+        <if test="eqmStatus != null ">
+            #{eqmStatus},
+        </if> 
+        now()
+        )
+    </insert>
+    
+    <!-- 批量添加设备 -->
+    <insert id="insert_batch" parameterType="java.util.ArrayList">
+        INSERT INTO Equipment
+        (
+        EqmName,PropertyNo,EqmType,EqmPrice,EqmClass,EqmFactory,EqmLab,BuyStaff,BuyTime,College,
+        EqmStatus,Manager,ManagerId,Description,ModifyTime
+        )
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.eqmName},#{item.propertyNo},#{item.eqmType},#{item.eqmPrice},#{item.eqmClass},
+            #{item.eqmFactory},#{item.eqmLab},#{item.buyStaff},#{item.buyTime},#{item.college},#{item.eqmStatus},
+            #{item.manager},#{item.managerId},#{item.description}, now()
+            )
+        </foreach>
+    </insert>
+</mapper>

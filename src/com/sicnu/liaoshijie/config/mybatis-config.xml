@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE configuration   
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">    
+<configuration>
+    <settings>  
+        <setting name="logImpl" value="LOG4J"/>  
+    </settings>    
+    <mappers>   
+        <!-- 设备表 -->
+        <mapper resource="com/sicnu/liaoshijie/config/mybatis_sql/equipment.xml"/> 
+        
+        <!-- 管理员表 -->
+        <mapper resource="com/sicnu/liaoshijie/config/mybatis_sql/administrator.xml"/>  
+        
+        <!-- 设备借出/归还记录表 -->
+        <mapper resource="com/sicnu/liaoshijie/config/mybatis_sql/eqmLendRecord.xml"/>
+        
+        <!-- 设备维修/报修记录表 -->
+        <mapper resource="com/sicnu/liaoshijie/config/mybatis_sql/eqmRepairRecord.xml"/>
+        
+        <!-- 设备报废记录表 -->
+        <mapper resource="com/sicnu/liaoshijie/config/mybatis_sql/eqmScrapRecord.xml"/>
+    </mappers>  
+    
+</configuration>

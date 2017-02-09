@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lendRecord">
+
+<!-- 分页查询 -->
+    <select id="select_page_map" parameterType="java.util.Map"
+        resultType="com.sicnu.liaoshijie.labEqmMS.model.EqmLendRecordVo">
+        SELECT * FROM EqmLendRecord 
+        WHERE keyID>=(select keyID from EqmLendRecord 
+        WHERE 1=1
+         <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="adminId != null ">
+            AND adminId = #{adminId}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="lenderId != null ">
+            AND lenderId = #{lenderId}
+        </if>
+        <if test="lenderName != null ">
+            AND lenderName = #{lenderName}
+        </if>
+        <if test="lenderLevel != null ">
+            AND lenderLevel = #{lenderLevel}
+        </if>
+        <if test="lendDate != null ">
+            AND lendDate = #{lendDate}
+        </if>
+        <if test="planReturnDate != null ">
+            AND planReturnDate = #{planReturnDate}
+        </if>
+        <if test="actualReturnDate != null ">
+            AND actualReturnDate = #{actualReturnDate}
+        </if>
+        <if test="application != null ">
+            AND application = #{application}
+        </if>
+        <if test="handleStatus != null ">
+            AND handleStatus = #{handleStatus}
+        </if>
+        <if test="handleStatusName != null ">
+            AND handleStatusName = #{handleStatusName}
+        </if> 
+        <if test="handleDate != null ">
+            AND handleDate = #{handleDate}
+        </if> 
+        <if test="handleReason != null ">
+            AND handleReason = #{handleReason}
+        </if>
+        ORDER BY KeyID ASC
+        limit #{pageCurrent},1 )        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+         <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="adminId != null ">
+            AND adminId = #{adminId}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="lenderId != null ">
+            AND lenderId = #{lenderId}
+        </if>
+        <if test="lenderName != null ">
+            AND lenderName = #{lenderName}
+        </if>
+        <if test="lenderLevel != null ">
+            AND lenderLevel = #{lenderLevel}
+        </if>
+        <if test="lendDate != null ">
+            AND lendDate = #{lendDate}
+        </if>
+        <if test="planReturnDate != null ">
+            AND planReturnDate = #{planReturnDate}
+        </if>
+        <if test="actualReturnDate != null ">
+            AND actualReturnDate = #{actualReturnDate}
+        </if>
+        <if test="application != null ">
+            AND application = #{application}
+        </if>
+        <if test="handleStatus != null ">
+            AND handleStatus = #{handleStatus}
+        </if>
+        <if test="handleStatusName != null ">
+            AND handleStatusName = #{handleStatusName}
+        </if> 
+        <if test="handleDate != null ">
+            AND handleDate = #{handleDate}
+        </if> 
+        <if test="handleReason != null ">
+            AND handleReason = #{handleReason}
+        </if>
+        limit #{pageSize}
+    </select>
+    
+    
+    <insert id="insert" parameterType="com.sicnu.liaoshijie.labEqmMS.model.EqmLendRecordVo">
+        INSERT INTO
+        EqmLendRecord
+        (	
+			propertyNo,
+			eqmName,
+			lenderId,
+			lenderName,
+			lenderLevel,
+			lendDate,
+			application,
+			planReturnDate,
+			actualReturnDate,
+			adminId,
+			adminName,
+			handleStatus,
+			handleStatusName,
+			handleDate,
+			handleReason
+        )
+        Values(
+	        #{propertyNo},
+	        #{eqmName},
+			#{lenderId},
+			#{lenderName},
+			#{lenderLevel},
+			#{lendDate},
+			#{application},
+			#{planReturnDate},
+			#{actualReturnDate},
+			#{adminId},
+			#{adminName},
+			#{handleStatus},
+			#{handleStatusName},
+			#{handleDate},
+			#{handleReason}
+        )
+    </insert>
+    
+    <!-- 查询总量 -->
+    <select id="query_count" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(*) from EqmLendRecord WHERE 1=1 
+        <if test="keyID != null ">
+            AND keyID = #{keyID}
+        </if>
+        <if test="propertyNo != null ">
+            AND propertyNo = #{propertyNo}
+        </if>
+        <if test="eqmName != null ">
+            AND eqmName = #{eqmName}
+        </if>
+        <if test="adminId != null ">
+            AND adminId = #{adminId}
+        </if>
+        <if test="adminName != null ">
+            AND adminName = #{adminName}
+        </if>
+        <if test="lenderId != null ">
+            AND lenderId = #{lenderId}
+        </if>
+        <if test="lenderName != null ">
+            AND lenderName = #{lenderName}
+        </if>
+        <if test="lenderLevel != null ">
+            AND lenderLevel = #{lenderLevel}
+        </if>
+        <if test="lendDate != null ">
+            AND lendDate = #{lendDate}
+        </if>
+        <if test="planReturnDate != null ">
+            AND planReturnDate = #{planReturnDate}
+        </if>
+        <if test="actualReturnDate != null ">
+            AND actualReturnDate = #{actualReturnDate}
+        </if>
+        <if test="application != null ">
+            AND application = #{application}
+        </if>
+        <if test="handleStatus != null ">
+            AND handleStatus = #{handleStatus}
+        </if>
+        <if test="handleStatusName != null ">
+            AND handleStatusName = #{handleStatusName}
+        </if> 
+        <if test="handleDate != null ">
+            AND handleDate = #{handleDate}
+        </if> 
+        <if test="handleReason != null ">
+            AND handleReason = #{handleReason}
+        </if> 
+    </select> 
+    
+    <!-- 批量更新 -->
+    <update id="updateLendStatusById" parameterType="java.util.List">
+    	 <foreach collection="list" item="item" index="index" open="" close="" separator=";">  
+                update EqmLendRecord   
+                <set>  
+                	<if test="item.handleReason != null">
+                		handleReason = #{item.handleReason},
+                	</if>
+                	<if test="item.actualReturnDate != null">
+                		actualReturnDate = #{item.actualReturnDate},
+                	</if>
+                	handleStatus=#{item.handleStatus},
+                	HandleStatusName=#{item.handleStatusName},
+                	HandleDate=now()
+                </set>
+                where keyID = #{item.keyID}  
+         </foreach>  
+    </update>
+</mapper>

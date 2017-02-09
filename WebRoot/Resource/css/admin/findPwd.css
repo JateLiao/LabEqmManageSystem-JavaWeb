@@ -1,0 +1,31 @@
+/**ÕÒ»ØÃÜÂë **/
+@CHARSET "UTF-8";
+
+body {
+	width: 340px;
+	height: 220px;
+	margin: auto auto;
+	font-size: 16px;
+	font-family: ËÎÌå;
+	font-weight: 600;
+}
+
+.main {
+	width: 90%;
+	height: 85%;
+	margin: auto auto;
+	margin-top: 20px;
+}
+
+.main table tr{
+	height: 35px;
+}
+
+.operation{
+	width: 100%;
+	margin: auto auto;
+	margin-top: 30px;
+	font-family: ËÎÌå;
+	font-weight: normal;
+	text-align: center;
+}

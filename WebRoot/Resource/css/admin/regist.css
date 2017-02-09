@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+body{
+	width: 320px;
+	height: 520px;
+	font-size: 14px;
+}
+
+.main{
+	width:90%;
+	height: 90%;
+	margin: auto auto; 
+	margin-top: 5px;
+}
+
+.mian input text{
+	 font-family:"Microsoft YaHei";
+}
+
+.main table tr{
+	height: 30px;
+}
+
+.operation{
+	width: 100%;
+	margin: auto auto; 
+	margin-top: 10px; 
+}
+
+.caution{
+	width: 300px;
+	color: black;
+	font-size: 12px;
+	margin: auto auto;
+	margin-top: 15px;
+}
+.caution font{
+	color: red;
+	font-size: 14px;
+	font-weight: 600;
+}
+.caution span{
+	color: black;
+	font-size: 14px;
+	font-weight: 600;
+}
