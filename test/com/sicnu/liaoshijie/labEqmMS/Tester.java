@@ -20,15 +20,6 @@ import com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo;
  */
 
 /**
- * TODO 添加类的一句话简单描述.
- * <p>
- * TODO 详细描述
- * <p>
- * TODO 示例代码
- * 
- * <pre>
- * </pre>
- * 
  * @author tianzhong
  */
 public class Tester extends BaseTest {
