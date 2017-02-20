@@ -20,7 +20,7 @@ import com.sicnu.liaoshijie.labEqmMS.model.EquipmentVo;
  */
 
 /**
- * @author tianzhong
+ * @author jet liao
  */
 public class Tester extends BaseTest {
     /**
