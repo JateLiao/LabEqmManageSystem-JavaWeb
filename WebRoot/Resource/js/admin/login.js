@@ -18,7 +18,7 @@ function login() {
 			dataType: 'json',
 			success: function(data){
 				if (data == 'success') { 
-					window.location.href = "main.jsp";
+					window.location.href = "/View/main.jsp";
 					return;
 				} else if (data == 'id_or_pwd_error') {
 					parentLayerAlert('<font color="red" size="2">账号或密码错误，登录失败！</font>', '提示', 2, 'layui-layer-molv');
@@ -110,7 +110,7 @@ function toRegist() {
 		/*shade : false,*/
 		maxmin : false, // 开启最大化最小化按钮
 		area : [ '325px', '620px' ],
-		content : ['admin/regist.html', 'no']
+		content : ['/View/admin/regist.html', 'no']
 	});
 }
 
@@ -123,7 +123,7 @@ function toFindPwd() {
 		shadeClose : true,
 		maxmin : true, // 开启最大化最小化按钮
 		area : [ '410px', '285px' ],
-		content : 'admin/findPwd.html' 
+		content : '/View/admin/findPwd.html' 
 	});
 }
 
