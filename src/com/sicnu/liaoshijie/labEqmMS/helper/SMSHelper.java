@@ -9,10 +9,12 @@
 package com.sicnu.liaoshijie.labEqmMS.helper;
 
 /**
- * TODO 短信Helper. 
+ * TODO 短信Helper.
  * 
- * @author     KOBE
+ * @author KOBE
  */
 public class SMSHelper {
+	public static void main(String[] args) {
 
+	}
 }
