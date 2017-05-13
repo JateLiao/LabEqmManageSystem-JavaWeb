@@ -91,23 +91,15 @@ public class DateUtil {
     /**
      * TODO 获取某一时间基础上指定的时间.
      * 
-     * @param dateTime
-     *            .
-     * @param year
-     *            .
-     * @param month
-     *            .
-     * @param day
-     *            .
-     * @param hour
-     *            .
-     * @param minute
-     *            .
-     * @param second
-     *            .
+     * @param dateTime   .
+     * @param year      .
+     * @param month   .
+     * @param day   .
+     * @param hour  .
+     * @param minute .
+     * @param second  .
      * @return .
-     * @throws ParseException
-     *             .
+     * @throws ParseException    .
      */
     public static Date getSpecifiedDate(String dateTime, int year, int month, int day, int hour, int minute, int second) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
