@@ -13,10 +13,7 @@ package com.sicnu.liaoshijie.labEqmMS.constant;
  * <p>
  * TODO 详细描述
  * <p>
- * TODO 示例代码
- * 
- * <pre>
- * </pre>
+ * TODO 示例代码 
  * 
  * @author tianzhong
  */
